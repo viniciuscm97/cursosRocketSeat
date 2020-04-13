@@ -1,0 +1,60 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+rel="stylesheet">
+<title>Conteudos - Vinicius Castro Moreira</title>
+
+{% endblock %}
+
+{% block content %}
+<section class="cards">
+    
+    <div class="card-cursos" id="starter">
+        <div class="card-img">
+            <img src="https://rocketseat.com.br/static/images/update/curso-javascript.svg" alt="Starter">
+        </div>
+
+        <div class="card-content">
+            <p>Starter</p>
+        </div>
+    </div>
+    
+    <div class="card-cursos" id="starter/curso-gratuito-javascript">
+        <div class="card-img">
+            <img src="https://rocketseat.com.br/static/images/update/curso-reactjs.svg" alt="LaunchBase">
+        </div>
+
+        <div class="card-content">
+            <p>LaunchBase</p>
+        </div>
+    </div>
+    
+    <div class="card-cursos" id="gostack">
+        <div class="card-img">
+            <img src="https://rocketseat.com.br/static/images/update/curso-react-native.svg" alt="gostack">
+        </div>
+
+        <div class="card-content">
+            <p>GoStack</p>
+        </div>
+    </div>
+</section>
+
+<div class="modal-overlay">
+    <div class="modal">
+        <a class="close-modal">
+            <!-- icone fechar -->
+            <i class="material-icons">close</i>
+        </a>
+        <div class="modal-content">
+            <!-- video -->
+            <iframe src="https://rocketseat.com.br/starter/curso-gratuito-javascript" frameborder="0"></iframe>
+        </div>
+
+    </div>
+</div>
+
+<script src="scripts.js"></script>
+
+{% endblock %}
