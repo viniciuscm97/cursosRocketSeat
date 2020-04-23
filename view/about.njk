@@ -7,17 +7,16 @@
 {% block content %}
 
     <div id="wrapper">
-        <img src="https://rocketseat.com.br/static/images/logo-rocketseat.svg" alt="Logo rocketseat">
-        <h1>RocketSeat</h1>
-        <h2>As melhores tecnologias em programação, direto ao ponto e do jeito certo.</h2>
-        <p>Linguagens como, Javascript, NodeJS, React Native, React JS</p>
+        <img src="{{data.icon_url}}" alt="Logo rocketseat">
+        <h1>{{data.title}}</h1>
+        <h2>{{data.about}}</h2>
+        <p>{{data.description}}</p>
     </div>
 
     <div id="links-footer" class="links">
-        <a href="/">GitHub</a>
-        <a href="https://discordapp.com/invite/gCRAFhc">Instagram</a>
-        <a href="mailto:oi@rocketseat.com.br">Facebook</a>
-        <a href="tel:+5547992078767">Telefone</a>
+    {% for links in data.link %}
+        <a href="{{links.url}}" target="_blank">{{links.name}}</a>
+    {% endfor %}
     </div>
 
 {% endblock %}

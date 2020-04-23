@@ -1,0 +1,22 @@
+{% extends layout.njk %}
+
+{% block head %}
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+rel="stylesheet">
+<title>Course - Vinicius Castro Moreira</title>
+
+<section class="cards">
+    
+    <div class="card-courses" id="{{infoCourses.id}}">
+        <div class="card-img">
+            <img src="https://rocketseat.com.br/static/images/update/{{infoCourses.img}}" alt="{{infoCourses.title}}">
+        </div>
+
+        <div class="card-content">
+            <p>{{infoCourses.title}}</p>
+        </div>
+    </div>
+</section>
+
+
+{% endblock head %}

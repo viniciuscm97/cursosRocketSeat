@@ -5,56 +5,44 @@
 rel="stylesheet">
 <title>Conteudos - Vinicius Castro Moreira</title>
 
-{% endblock %}
+{% endblock head %}
 
 {% block content %}
+
+    {% if infoSubCourses %}
+    <div class="course">
+        <div class="course-title">
+            <h1>{{infoSubCourses.title}}</h1>
+        </div>
+
+        <div class="course-img">
+            <img src="https://rocketseat.com.br/static/images/update/{{infoSubCourses.img}}" alt="Imagem de {{infoSubCourses.title}}">
+        </div>
+        <div class="course-container">
+            <p>{{infoSubCourses.description}}</p>
+        </div>
+        
+        <div class="course-link">
+            <a href="https://rocketseat.com.br/{{infoSubCourses.id}}" target="_blank" >Saiba mais</a>
+        </div>
+        
+    </div>
+    {% endif %}
 <section class="cards">
+    {% for courses in infoCourse %}
     
-    <div class="card-cursos" id="starter">
+    <div class="card-courses" id="{{courses.id}}">
         <div class="card-img">
-            <img src="https://rocketseat.com.br/static/images/update/curso-javascript.svg" alt="Starter">
+            <img src="https://rocketseat.com.br/static/images/update/{{courses.img}}" alt="{{courses.title}}">
         </div>
 
         <div class="card-content">
-            <p>Starter</p>
+            <p>{{courses.title}}</p>
         </div>
     </div>
-    
-    <div class="card-cursos" id="starter/curso-gratuito-javascript">
-        <div class="card-img">
-            <img src="https://rocketseat.com.br/static/images/update/curso-reactjs.svg" alt="LaunchBase">
-        </div>
 
-        <div class="card-content">
-            <p>LaunchBase</p>
-        </div>
-    </div>
-    
-    <div class="card-cursos" id="gostack">
-        <div class="card-img">
-            <img src="https://rocketseat.com.br/static/images/update/curso-react-native.svg" alt="gostack">
-        </div>
-
-        <div class="card-content">
-            <p>GoStack</p>
-        </div>
-    </div>
+    {% endfor %}
 </section>
+<script src="/scripts.js"></script>
 
-<div class="modal-overlay">
-    <div class="modal">
-        <a class="close-modal">
-            <!-- icone fechar -->
-            <i class="material-icons">close</i>
-        </a>
-        <div class="modal-content">
-            <!-- video -->
-            <iframe src="https://rocketseat.com.br/starter/curso-gratuito-javascript" frameborder="0"></iframe>
-        </div>
-
-    </div>
-</div>
-
-<script src="scripts.js"></script>
-
-{% endblock %}
+{% endblock content %}
